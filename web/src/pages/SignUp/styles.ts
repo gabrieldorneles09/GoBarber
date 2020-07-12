@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
-import signInBackgroundImg from '../../assets/sign-in-background.png';
+import signUpBackgroundImg from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
   height: 100vh;
@@ -16,7 +16,7 @@ export const Content = styled.div`
   align-items: center;
 
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
 
   form {
     margin: 80px 0;
@@ -41,7 +41,7 @@ export const Content = styled.div`
   }
 
   > a {
-    color: #ff9000;
+    color: #f4ede8;
     display: flex;
     align-items: center;
     margin-top: 24px;
@@ -53,13 +53,13 @@ export const Content = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.2, '#ff9000')};
+      color: ${shade(0.2, '#f4ede8')};
     }
   }
 `;
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${signInBackgroundImg}) no-repeat center;
+  background: url(${signUpBackgroundImg}) no-repeat center;
   background-size: cover;
 `;
