@@ -7,6 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import { useNavigation } from '@react-navigation/native';
 
 import logoImg from '../../assets/logo.png';
 
@@ -16,6 +17,8 @@ import Button from '../../components/Button';
 import { Container, Title, BackToSignIn, BackToSignInText } from './styles';
 
 const SignUp: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <KeyboardAvoidingView
@@ -31,7 +34,7 @@ const SignUp: React.FC = () => {
             <Image source={logoImg} />
 
             <View>
-              <Title>Faça seu cadastro</Title>
+              <Title>Crie sua conta</Title>
             </View>
 
             <Input name="name" icon="user" placeholder="Nome" />
@@ -47,13 +50,9 @@ const SignUp: React.FC = () => {
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
-      <BackToSignIn
-        onPress={() => {
-          console.log('Foi');
-        }}
-      >
+      <BackToSignIn onPress={() => navigation.goBack()}>
         <Icon name="arrow-left" size={20} color="#FFF" />
-        <BackToSignInText>Criar uma conta</BackToSignInText>
+        <BackToSignInText>Voltar para logon</BackToSignInText>
       </BackToSignIn>
     </>
   );
