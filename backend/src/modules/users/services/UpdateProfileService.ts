@@ -1,7 +1,4 @@
-// import fs from 'fs';
-// import path from 'path';
 import User from '@modules/users/infra/typeorm/entities/User';
-// import uploadConfig from '@config/upload';
 import AppError from '@shared/errors/AppError';
 import { injectable, inject } from 'tsyringe';
 import IUsersRepository from '../repositories/IUsersRepository';
@@ -16,7 +13,7 @@ interface IRequestDTO {
 }
 
 @injectable()
-class UpdateProfile {
+class UpdateProfileService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -68,4 +65,4 @@ class UpdateProfile {
   }
 }
 
-export default UpdateProfile;
+export default UpdateProfileService;
