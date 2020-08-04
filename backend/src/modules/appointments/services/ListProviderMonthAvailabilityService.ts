@@ -1,10 +1,6 @@
-// import User from '@modules/users/infra/typeorm/entities/User';
-// import AppError from '@shared/errors/AppError';
 import { injectable, inject } from 'tsyringe';
 import { getDaysInMonth, getDate } from 'date-fns';
-// import AppointmentsRepository from '../infra/typeorm/repositories/AppointmentsRepository';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
-// import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 
 interface IRequestDTO {
   provider_id: string;
