@@ -14,7 +14,6 @@ import '@shared/container';
 
 const app = express();
 
-app.use(rateLimiter);
 app.use(
   cors({
     origin: 'http://localhost:3000',
@@ -22,6 +21,7 @@ app.use(
 );
 app.use(express.json());
 app.use('/files', express.static(uploadConfig.uploadsFolder));
+app.use(rateLimiter);
 
 app.use(routes);
 
