@@ -1,7 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const CreateAppointment: React.FC = () => {
+interface CreateAppointmentParams {
+  providerId: string;
+}
+
+const CreateAppointment: React.FC = (data: CreateAppointmentParams) => {
   return <View />;
 };
 
