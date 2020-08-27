@@ -147,9 +147,19 @@ const Profile: React.FC = () => {
           uri: response.uri,
         });
 
-        api.patch('/users/avatar', data).then(apiResponse => {
-          updateUser(apiResponse.data);
-        });
+        console.log(`Console.log inicial: ${JSON.stringify(data)}`);
+
+        api
+          .patch('/users/avatar', data)
+          .then(apiResponse => {
+            console.log(
+              `Console.log sucesso: ${JSON.stringify(apiResponse.data)}`,
+            );
+            updateUser(apiResponse.data);
+          })
+          .catch(err => {
+            console.log(`Console.log erro: ${JSON.stringify(err)}`);
+          });
       },
     );
   }, [updateUser, user.id]);
